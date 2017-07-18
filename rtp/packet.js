@@ -75,7 +75,7 @@ class RTPPacket {
 
     /* CSRC section */
     for (let i = 0; i < cc; i++) {
-      csrc.append(buff.readUInt32BE(12 + i * 4))
+      csrc.push(buff.readUInt32BE(12 + i * 4))
     }
 
     const payload = Buffer.from(buff.slice(12 + csrc.length * 4))
